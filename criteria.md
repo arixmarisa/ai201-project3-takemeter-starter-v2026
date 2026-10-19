@@ -1,4 +1,5 @@
-# Acceptance criteria — TakeMeter
+
+# **Acceptance criteria — TakeMeter**
 
 Five criteria that say what "working" means for this classifier, written in
 unit 5 **before** anything was trained.
@@ -15,12 +16,12 @@ something about your data or your taxonomy earns credit — *"I picked 0.60 F1
 for `reaction` because it's my smallest label and I only have about 50
 examples of it"*. A reason that could be attached to any project does not.
 
-> Missing your own targets next unit costs you nothing. Setting a target so
-> easy you can't miss it does.
+> *Missing your own targets next unit costs you nothing. Setting a target so*
+> *easy you can't miss it does.*
 
 ---
 
-## Pick numbers you can defend
+## **Pick numbers you can defend**
 
 Not numbers that sound impressive. Three labels means a coin-flip guesser gets
 about 33%, so a target of 0.40 is barely a target. Your number should sit
@@ -51,63 +52,117 @@ whether you hit them:
 
 ---
 
-## 1.
+## **1. Overall classification accuracy**
 
-<!-- Your criterion. It must name a number. -->
-
-
+The model must achieve an overall accuracy of at least **0.65 (65%)** on the
+held-out test set across each of the three random seeds (42, 7, and 2024).
 
 **Why this target:**
 
-
+My classifier will categorize real posts from r/college into four categories:
+`academic_advice`, `college_experience`, `campus_life`, and
+`financial_concerns`. Since college discussions can overlap between topics,
+I believe 65% accuracy is a reasonable but meaningful target for a model
+trained on approximately 250 examples.
 
 ---
 
-## 2.
+## **2. Per-label F1 performance**
 
-<!-- Your criterion. -->
-
-
+Each of the four labels must achieve an F1 score of at least **0.50** on the
+held-out test set for each of the three random seeds.
 
 **Why this target:**
 
-
+Some college posts may mention more than one topic, such as a student discussing
+financial aid while asking for academic advice. I chose an F1 target of 0.50
+because these overlapping subjects can make classification difficult, especially
+when each category will have approximately 50–70 examples in the dataset.
 
 ---
 
-## 3.
+## **3. Dataset label balance**
 
-<!-- Your criterion. -->
-
-
+No individual label may represent more than **40%** of the final dataset,
+which will contain at least **200 unique posts** from r/college.
 
 **Why this target:**
 
-
+Posts asking for academic advice may be more common than posts about financial
+concerns or campus activities. I want to prevent one category from dominating
+the training data while still allowing the distribution to reflect the types
+of discussions found in the community.
 
 ---
 
-## 4.
+## **4. Human annotation agreement**
 
-<!-- Your criterion. -->
-
-
+A second human annotator must independently classify at least **40 randomly
+selected posts**, achieving at least **80% agreement** with my original labels.
 
 **Why this target:**
 
-
+Some posts may fit multiple categories. For example, a student discussing
+problems with a roommate could be describing a personal college experience
+or discussing campus life. An agreement target of 80% will help determine
+whether my category definitions and labeling rules are clear enough for
+another person to apply consistently.
 
 ---
 
-## 5.
+## **5. High-confidence prediction accuracy**
 
-<!-- Your criterion. -->
-
-
+For each random seed, predictions with a confidence score of at least **0.80**
+must achieve at least **75% accuracy**, provided at least **5 test predictions**
+meet that confidence threshold.
 
 **Why this target:**
 
+Some college posts clearly belong to one category, while others combine
+multiple topics. I expect the model to be more accurate when it is highly
+confident about a prediction. I chose 75% because high-confidence predictions
+should be more reliable than the overall accuracy target of 65%. If fewer
+than five predictions reach the threshold, I will report insufficient data
+rather than claim that this criterion was met.
 
+---
+
+## Planned Stretch Features (+3 Points)
+
+### 1. Four-Label Classification (+1 Point)
+
+Train TakeMeter to classify r/college posts into four categories:
+
+- `academic_advice`
+- `college_experience`
+- `campus_life`
+- `financial_concerns`
+
+Each label will have a clear definition, examples, and boundary rules.
+
+### 2. Second Training Experiment (+1 Point)
+
+Complete a second training run that changes exactly one
+hyperparameter while keeping the dataset and evaluation
+conditions the same.
+
+Compare accuracy, macro F1, and per-label F1 between
+the original and modified training runs.
+
+### 3. Fifty Additional Minority-Label Posts (+1 Point)
+
+First, collect and review 200 genuine posts from r/college.
+
+Identify the label with the fewest examples in that
+initial dataset.
+
+Then collect 50 additional genuine posts specifically
+belonging to that smallest category.
+
+Document the label distribution before and after
+adding the 50 examples.
+
+**Final dataset target:** 250 unique, reviewed posts.
 
 ---
 
