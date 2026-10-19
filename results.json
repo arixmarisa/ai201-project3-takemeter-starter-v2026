@@ -1,0 +1,69 @@
+{
+  "seed": 42,
+  "n_test": 38,
+  "accuracy": 0.5526315789473685,
+  "f1_macro": 0.42384453781512604,
+  "per_label": {
+    "academic_advice": {
+      "precision": 0.47619047619047616,
+      "recall": 0.7692307692307693,
+      "f1": 0.5882352941176471,
+      "support": 13
+    },
+    "college_experience": {
+      "precision": 0.3333333333333333,
+      "recall": 0.2,
+      "f1": 0.25,
+      "support": 10
+    },
+    "campus_life": {
+      "precision": 0.8181818181818182,
+      "recall": 0.9,
+      "f1": 0.8571428571428571,
+      "support": 10
+    },
+    "financial_concerns": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 5
+    }
+  },
+  "confusion": {
+    "academic_advice": {
+      "academic_advice": 10,
+      "college_experience": 2,
+      "campus_life": 1,
+      "financial_concerns": 0
+    },
+    "college_experience": {
+      "academic_advice": 7,
+      "college_experience": 2,
+      "campus_life": 1,
+      "financial_concerns": 0
+    },
+    "campus_life": {
+      "academic_advice": 1,
+      "college_experience": 0,
+      "campus_life": 9,
+      "financial_concerns": 0
+    },
+    "financial_concerns": {
+      "academic_advice": 3,
+      "college_experience": 2,
+      "campus_life": 0,
+      "financial_concerns": 0
+    }
+  },
+  "confidence": {
+    "mean_when_right": 0.4988209009170532,
+    "mean_when_wrong": 0.40218231081962585,
+    "accuracy_most_confident_third": 0.75,
+    "accuracy_least_confident_third": 0.16666666666666666,
+    "n_per_third": 12
+  },
+  "device": "mps",
+  "device_name": "Apple Silicon GPU (MPS)",
+  "torch_version": "2.14.1",
+  "max_length": 128
+}
