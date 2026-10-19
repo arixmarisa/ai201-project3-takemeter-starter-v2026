@@ -5,6 +5,73 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+
+TakeMeter — College Discussion Label Definitions
+
+Community: r/college
+Source: https://www.reddit.com/r/college/
+
+Each Reddit post receives exactly one label based on its primary topic or purpose.
+
+1. academic_advice
+
+Posts primarily requesting guidance or recommendations about academic matters, including studying, courses, grades, exams, professors, course registration, and degree requirements.
+
+Examples:
+- A student asking whether to withdraw from a difficult course.
+- A student requesting advice about preparing for final exams.
+
+Boundary rule:
+If the post is primarily about coursework or academic decisions and seeks guidance, label it academic_advice. If it mainly shares a personal experience without requesting advice, use college_experience.
+
+
+2. college_experience
+
+Posts primarily sharing personal experiences, accomplishments, frustrations, or reflections about attending college.
+
+Examples:
+- A student celebrating making the dean's list.
+- A student describing their first semester of college.
+
+Boundary rule:
+Use college_experience when the main purpose is sharing a personal story, rather than discussing a specific campus-life or financial topic.
+
+
+3. campus_life
+
+Posts primarily discussing college social life, roommates, dormitories, friendships, student organizations, campus facilities, or extracurricular activities.
+
+Examples:
+- A student discussing difficulties with a roommate.
+- A student describing their experience joining a campus club.
+
+Boundary rule:
+If the central subject is a roommate, housing, friendship, or campus activity, use campus_life even if the writer describes a personal experience.
+
+
+4. financial_concerns
+
+Posts primarily discussing tuition, scholarships, financial aid, student loans, college expenses, or paying for education.
+
+Examples:
+- A student discussing difficulty paying tuition.
+- A student asking about changes to a financial aid package.
+
+Boundary rule:
+Use financial_concerns whenever the central issue is paying for college or managing educational expenses, even if the post asks for advice.
+
+
+GENERAL LABELING RULES
+
+1. Read the full post, not just its title.
+2. Assign exactly one of the four labels.
+3. Classify by the primary topic and purpose.
+4. Prioritize financial_concerns for financial questions.
+5. Prioritize campus_life for roommate, housing, and social-life discussions.
+6. Use academic_advice for academic guidance requests.
+7. Use college_experience for primarily personal reflections and achievements.
+8. Record ambiguous labeling decisions in the dataset's note column.
+9. Do not change labels merely to improve dataset balance.
+10. Remove duplicate posts before training.
+
+All sample examples above are illustrative, not collected Reddit posts.
